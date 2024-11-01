@@ -11,7 +11,7 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/fruitkha-1.0.0/service-worker.js').then(function(registration) {
+      navigator.serviceWorker.register('service-worker.js').then(function(registration) {
         console.log('ServiceWorker registered with scope:', registration.scope);
       }, function(error) {
         console.log('ServiceWorker registration failed:', error);
