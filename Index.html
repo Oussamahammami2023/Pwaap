@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="manifest" href="/fruitkha-1.0.0/manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/fruitkha-1.0.0/service-worker.js').then(function(registration) {
+        console.log('ServiceWorker registered with scope:', registration.scope);
+      }, function(error) {
+        console.log('ServiceWorker registration failed:', error);
+      });
+    });
+  }
+</script>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+     body, html {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7f9;
+      .store-header {
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            text-align: center;
+            perspective: 1000px;
+        }
+
+        /* تصميم المظلة ثلاثية الأبعاد */
+ .store-awning {
+    display: flex;
+    z-index: 10; /* للتأكد من أنه فوق المحتوى */
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 60px;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #f57c00, #f62c8e);
+    position: fixed; /* يجعل العنصر ثابتًا بالكامل */
+    top: 0; /* تثبيت العنصر في أعلى الصفحة */
+    left: 0;
+    transform: none; /* إزالة أي تحويلات قد تؤدي إلى تحرك العنصر */
+}
+ /* Background */
+.hero {
+    background: url('/fruitkha-1.0.0/img/Rustic-Cafe-Counter.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 50vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+ /* Welcome Text */
+.hero-content {
+    z-index: 1;
+    text-align: center; 
+    color: white;
+    margin-top: 0px; 
+}
+        .hero-content h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .hero-content h1 {
+    animation: fadeInOut 3s ease forwards; /* تطبيق التأثير */
+}
+           @keyframes fadeInOut {
+    0% {
+        opacity: 0; /* يبدأ العنوان غير مرئي */
+        transform: translateY(-100px); /* يتحرك للأعلى */
+    }
+    30% {
+        opacity: 1; /* يظهر العنوان */
+    }
+    70% {
+        opacity: 1; /* يبقى مرئي */
+    }
+    100% {
+        opacity: 0; /* يختفي */
+        transform: translateY(70px);
+    }
+           }
+ /* Transparency */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.0); /* يمكنك تعديل الشفافية حسب الحاجة */
+}
+  /* Logo */
+        .logo {
+            position: fixed;
+            top: 15px;
+            left: 13px;
+        }
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+        /* Social Icons and Menu Icon */
+        .top-icons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .top-icons a, .menu-icon {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+   /* Menu test */
+.section {
+    border-top-left-radius: 25px; 
+    border-top-right-radius: 25px; 
+    background-color: #F6F7F9; 
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px; 
+    margin-top: -25px;
+    position: relative;
+}
+.section h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: -10px; 
+}
+ .section h2 span {
+            color: #f57c00;
+        }
+.section .underline {
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    background-color: #f57c00;
+}
+/* تنسيق الحاوية الرئيسية للتبويبات */
+.tabs {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* إخفاء شريط التمرير في المتصفحات المختلفة */
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+.tabs {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* تنسيق كل تبويبة */
+.tab {
+    padding: 8px 10px;
+    color: #555;
+    background-color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    flex: 0 0 auto;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+/* تنسيق الصور داخل التبويبات */
+.tab img {
+    width: 65px; /* عرض الصورة */
+    height: 65px; /* ارتفاع الصورة */
+    border-radius: 15px; /* زوايا دائرية */
+    object-fit: cover; /* لضبط الصورة في الإطار */
+    border: 3px solid gold; /* حواف ذهبية بسماكة 3 بكسل */
+    margin-bottom :7px;
+}
+
+/* تنسيق التبويبة النشطة */
+.tab.active {
+    color: #000;
+    border-bottom: 4px solid #f57c00;
+    position: relative;
+}
+        .container {
+            display: none;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+            margin-top: 5px;
+            padding: 4px;
+        }
+        .container.active {
+            display: flex;
+        }
+        .product-card {
+            width: 49%;
+            height:100:px;
+            border: 1px solid #ddd;
+            background-color:#fff;
+            border-radius: 8px;
+            padding: 0px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .product-card p {
+            color: #888;
+        }
+        .price {
+            font-size: 20px;
+            color: #333;
+            margin: 10px 0;
+        }
+        .add-to-cart {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #f57c00;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom:20px;
+        }
+        .sale-section {
+    background-color: #f2f2f2; /* لون الخلفية */
+    padding: 20px;
+    text-align: left ;
+    font-family: Arial, sans-serif;
+}
+
+.sale-section h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+    margin-top :50px;
+}
+
+.sale-section h1 span {
+    color: #ff7a00; /* لون الكلمة "Discount..." */
+}
+
+.sale-section p {
+    font-size: 1.5em;
+    color: #333;
+    margin: 20px 0;
+}
+
+.sale-section p .discount {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ff7a00; /* لون النسبة */
+}
+
+.shop-now {
+    background-color: #ff7a00; /* لون الزر */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom :40px;
+}
+
+.shop-now:hover {
+    background-color: #e06c00; /* لون عند التحويم */
+}
+.discover-section {
+    background-image: url('/fruitkha-1.0.0/img/IMG20220204201624-1.jpg'); /* ضع مسار الصورة هنا */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay p {
+    font-size: 1.5em;
+    color: #ff0000; /* اللون الأحمر لكلمة "Discover" */
+    margin: 0;
+}
+
+.overlay h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+.card2 {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.card2-image {
+    width: 93%;
+   height:210px;
+    border-radius: 15px;
+    margin-top:20px;
+}
+
+.card2-title {
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 30px;
+   margin-right: 60px;
+    
+}
+
+.card2-description {
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 20px 0;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.card2-link {
+    color: #fff;
+    font-weight: 400;
+    padding: 7px 23px;
+    border-radius :12px;
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    margin-right: 250px;
+    margin-bottom:40px;
+    background-color: #000;
+    background-size: 40px 50px;
+}
+#discover-video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/fruitkha-1.0.0/img/2/23848509741_869081fbca_b.jpg') center/cover no-repeat;
+  background-attachment: fixed; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+#discover-video .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#discover-video .content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+/* نص "Discover" */
+#discover-video .content p {
+  color: red;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* عنوان "OUR VIDEO" */
+#discover-video .content h1 {
+  font-size: 3em;
+  margin: 0.2em 0;
+}
+
+/* زر التشغيل */
+#discover-video .content .play-button {
+  font-size: 1.7em;
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.review-section {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-top:70px;
+  margin-bottom: 100px;
+}
+
+.review-title {
+  color: red;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.review-heading {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0.2em 0;
+  color: #000;
+}
+
+.review-slider {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.review-slide.active {
+  display: block;
+  position: relative;
+}
+
+.review-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid red;
+}
+
+.review-text {
+  font-size: 1.2em;
+  color: #666;
+  margin: 1em 0;
+  padding: 0 1em;
+}
+
+.review-stars {
+  color: red;
+  font-size: 1.5em;
+}
+
+.review-author {
+  font-weight: bold;
+  color: #333;
+  margin-top: 1em;
+}
+
+.review-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.review-pagination .dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.review-pagination .dot.active {
+  background-color: red;
+}
+.footer {
+    background-color: #0d2a33;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+.footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.footer p {
+    font-size: 0.9rem;
+    margin: 15px 0;
+}
+.footer .contact-info {
+    margin: 50px 0;
+}
+.footer .contact-info p {
+    margin: 5px 0;
+}
+.footer .social-icons {
+    margin-top: 20px;
+}
+.footer .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.footer .credits {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+.footer .credits a {
+    color: #f39c12;
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+  <div class="hero">
+  <div class="overlay"></div>
+  <!-- Logo -->
+  <div class="logo">
+    <img src="/fruitkha-1.0.0/img/logo.png" alt="Pato Restaurant Logo">
+  </div>
+  <!-- Social Icons and Menu Icon -->
+  <div class="top-icons">
+    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-apps"></i></a>
+    <div class="menu-icon">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+  <!-- عنوان -->
+  <div class="hero-content">
+    <h1 class="animate__animated animate__fadeInDown">Bienvenue</h1>
+  </div>
+        <!-- Welcome Text -->
+      
+    </div>
+<div class="section">
+    <h2><span>M</span>enu</h2>
+     <div class="underline"></div>
+</div>
+</div>
+<!-- التبويبات -->
+<div class="tabs">
+  <div class="tab active" onclick="showGroup('all', this)">
+    <img src="/fruitkha-1.0.0/img/menu img/pizza.jpg" alt="Pizza">
+    Pizza
+  </div>
+  <div class="tab" onclick="showGroup('music', this)">
+    <img src="/fruitkha-1.0.0/img/menu img/burger.jpg" alt="Burger">
+    Burger
+  </div>
+  <div class="tab" onclick="showGroup('list', this)">
+    <img src="/fruitkha-1.0.0/img/menu img/9880a0e565370b0b130cfb9218826fa1.jpg" alt="Sandwiches">
+    Sandwiches
+  </div>
+  <div class="tab" onclick="showGroup('apps', this)">
+    <img src="/fruitkha-1.0.0/img/3/6978155.png" alt="Shawarma">
+    Shawarma
+  </div>
+   <div class="tab" onclick="showGroup('music', this)">
+    <img src="/fruitkha-1.0.0/img/menu img/burger.jpg" alt="Burger">
+    Burger
+  </div>
+</div>
+
+<!-- مجموعات البطاقات -->
+<div id="all" class="container active">
+  <div class="product-card">
+    <img src="/fruitkha-1.0.0/img/pizza-with-slice-pizza-it_1102161-15362.avif" alt="Banana">
+    <h3>Banana</h3>
+    <p>Petite pizza</p>
+    <div class="price">10DT</div>
+    <a href="#" class="add-to-cart">🛒Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="/fruitkha-1.0.0/img/pizza-with-slice-pizza-it_1102161-15362.avif" alt="Banana">
+    <h3>Banana</h3>
+    <p>Pizza moyenne</p>
+    <div class="price">10DT</div>
+    <a href="#" class="add-to-cart">🛒Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="/fruitkha-1.0.0/img/pizza-with-slice-pizza-it_1102161-15362.avif" alt="Apple">
+    <h3>Apple</h3>
+    <p>Pizza extra-large</p>
+    <div class="price">6DT</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="/fruitkha-1.0.0/img/pizza-with-slice-pizza-it_1102161-15362.avif" alt="Drum Set">
+    <h3>Drum Set</h3>
+    <p>Per Set</p>
+    <div class="price">5DT</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+</div>
+
+<div id="music" class="container">
+  <div class="product-card">
+    <img src="/fruitkha-1.0.0/img/pizza-with-slice-pizza-it_1102161-15362.avif" alt="Guitar">
+    <h3>Guitar</h3>
+    <p>Per Unit</p>
+    <div class="price">200$</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="/fruitkha-1.0.0/img/pizza-with-slice-pizza-it_1102161-15362.avif" alt="Piano">
+    <h3>Piano</h3>
+    <p>Per Unit</p>
+    <div class="price">1500$</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="/fruitkha-1.0.0/img/pizza-with-slice-pizza-it_1102161-15362.avif" alt="Drum Set">
+    <h3>Drum Set</h3>
+    <p>Per Set</p>
+    <div class="price">500$</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="/fruitkha-1.0.0/img/pizza-with-slice-pizza-it_1102161-15362.avif" alt="Drum Set">
+    <h3>Drum Set</h3>
+    <p>Per Set</p>
+    <div class="price">500$</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+</div>
+<div id="list" class="container">
+  <div class="product-card">
+    <img src="https://example.com/guitar.jpg" alt="Guitar">
+    <h3>pizza</h3>
+    <p>Per Unit</p>
+    <div class="price">200$</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="https://example.com/piano.jpg" alt="Piano">
+    <h3>Piano</h3>
+    <p>Per Unit</p>
+    <div class="price">1500$</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="https://example.com/drum.jpg" alt="Drum Set">
+    <h3>Drum Set</h3>
+    <p>Per Set</p>
+    <div class="price">500$</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="https://example.com/drum.jpg" alt="Drum Set">
+    <h3>Drum Set</h3>
+    <p>Per Set</p>
+    <div class="price">500$</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+</div>
+<div id="apps" class="container">
+  <div class="product-card">
+    <img src="https://example.com/guitar.jpg" alt="Guitar">
+    <h3>berger</h3>
+    <p>Per Unit</p>
+    <div class="price">200$</div>
+    <a href="#" class="add-to-cart">🛒Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="https://example.com/piano.jpg" alt="Piano">
+    <h3>Piano</h3>
+    <p>Per Unit</p>
+    <div class="price">1500$</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="https://example.com/drum.jpg" alt="Drum Set">
+    <h3>Drum Set</h3>
+    <p>Per Set</p>
+    <div class="price">500$</div>
+    <a href="#" class="add-to-cart">🛒Acheter</a>
+  </div>
+  <div class="product-card">
+    <img src="https://example.com/drum.jpg" alt="Drum Set">
+    <h3>Drum Set</h3>
+    <p>Per Set</p>
+    <div class="price">500$</div>
+    <a href="#" class="add-to-cart">🛒 Acheter</a>
+  </div>
+</div>
+<div class="sale-section">
+    <h1>Les soldes de décembre sont en cours !<br>avec grand <span>Rabais...</span></h1>
+    <p>Vente! Jusqu'à <span class="discount">50%</span> off</p>
+    <button class="shop-now">Bienvenue</button>
+</div>
+<div class="discover-section">
+    <div class="overlay">
+        <p>Découvrir</p>
+        <h1>PATO<br>PLACE</h1>
+    </div>
+</div>
+<div class="card2">
+  <img src="/fruitkha-1.0.0/img/IMG_20241030_002228.jpg" alt="Romantic Restaurant" class="card2-image">
+  <h2 class="card2-title">ROMANTIC RESTAURANT</h2>
+  <p class="card2-description">Phasellus lorem enim, luctus ut velit eget, convallis egestas eros.</p>
+  <a href="#" class="card2-link">25DT</a>
+</div>
+<div class="card2">
+  <img src="/fruitkha-1.0.0/img/2/081524_NuriSteakHouse_KathyTran_IMG_0178.53.jpg" alt="Romantic Restaurant" class="card2-image">
+  <h2 class="card2-title">ROMANTIC RESTAURANT</h2>
+  <p class="card2-description">Phasellus lorem enim, luctus ut velit eget, convallis egestas eros.</p>
+  <a href="#" class="card2-link">35DT</a>
+</div>
+<div class="card2">
+  <img src="/fruitkha-1.0.0/img/IMG_20241030_002228.jpg" alt="Romantic Restaurant" class="card2-image">
+  <h2 class="card2-title">ROMANTIC RESTAURANT</h2>
+  <p class="card2-description">Phasellus lorem enim, luctus ut velit eget, convallis egestas eros.</p>
+  <a href="#" class="card2-link">39DT</a>
+</div>
+ </div>
+<div id="discover-video" class="discover-section">
+    <div class="overlay"></div>
+    <div class="content">
+        <p>Discover</p>
+        <h1>OUR VIDEO</h1>
+        <div class="play-button">&#9654;</div> <!-- زر التشغيل -->
+    </div>
+ </div>
+<div class="review-section">
+    <p class="review-title">Customers Say</p>
+    <h1 class="review-heading">REVIEW</h1>
+    
+    <div class="review-slider">
+        <div class="review-slide active">
+            <div class="review-content">
+                <div class="review-image">
+                    <img src="/fruitkha-1.0.0/img/1/IMG_20240819_210356.jpg" alt="Customer 1">
+                </div>
+                <p class="review-text">
+                    “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem, mattis in pretium nec, fermentum viverra dui ”
+                </p>
+                     <div class="review-stars">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                </div>
+                <p class="review-author">MARIE SIMMONS - NEW YORK</p>
+            </div>
+        </div>
+        <div class="review-slide">
+            <div class="review-content">
+                <div class="review-image">
+                    <img src="/fruitkha-1.0.0/img/1/IMG_20240819_220344.jpg" alt="Customer 2">
+                </div>
+                <p class="review-text">
+                    “ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur odio at mi feugiat, non hendrerit arcu pellentesque. ”
+                </p>
+                <div class="review-stars">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                </div>
+                <p class="review-author">JOHN DOE - LOS ANGELES</p>
+            </div>
+        </div>
+        <div class="review-slide">
+            <div class="review-content">
+                <div class="review-image">
+                    <img src="/fruitkha-1.0.0/img/1/IMG_20240819_220357.jpg" alt="Customer 3">
+                </div>
+                <p class="review-text">
+                    “ Praesent ac sem eget est egestas volutpat. Duis varius ligula et magna fermentum, eget vehicula mi viverra. ”
+                </p>
+                <div class="review-stars">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                </div>
+                <p class="review-author">ANNA SMITH - CHICAGO</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="review-pagination">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+<!-- ألصق هذا الكود في نهاية ملف HTML الأساسي لديك -->
+<footer class="footer">
+  <h2>About us</h2>
+  <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+
+  <div class="contact-info">
+    <h2>Contact</h2>
+    <p>34/8, East Hukupara, Gifirtok, Sadan.</p>
+    <p>Phone: +00 111 222 3333</p>
+  </div>
+
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f">F</i></a>
+    <a href="#"><i class="fab fa-twitter">t</i></a>
+    <a href="#"><i class="fab fa-instagram">I</i></a>
+    <a href="#"><i class="fab fa-linkedin-in">L</i></a>
+    <a href="#"><i class="fab fa-dribbble">D</i></a>
+  </div>
+
+  <div class="credits">
+    <p>Copyrights © 2025 - <a href="#">TN-WORK</a>, Tous droits réservés.</p>
+    <p>Power By - <a href="#">TN-WORK</a></p>
+  </div>
+</footer>
+<script>
+    function showGroup(group, tabElement) {
+        // إخفاء جميع المجموعات
+        const containers = document.querySelectorAll('.container');
+        containers.forEach(container => {
+            container.classList.remove('active');
+        });
+
+        // إظهار المجموعة المحددة
+        const activeContainer = document.getElementById(group);
+        activeContainer.classList.add('active');
+
+        // تحديث التبويبات النشطة
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.classList.remove('active'); // إزالة النشطة من جميع التبويبات
+        });
+
+        // تعيين التبويبة النشطة بناءً على المجموعة المفتوحة
+        tabElement.classList.add('active'); // إضافة النشطة للتبويبة المناسبة
+    }
+    let currentSlide = 0;
+const slides = document.querySelectorAll('.review-slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        dots[i].classList.toggle('active', i === index);
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+setInterval(nextSlide, 3000); // التمرير كل 3 ثواني
+</script>
+</body>
+</html>
