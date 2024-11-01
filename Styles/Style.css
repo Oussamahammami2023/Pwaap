@@ -1,0 +1,539 @@
+ body, html {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7f9;
+      .store-header {
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            text-align: center;
+            perspective: 1000px;
+        }
+
+        /* تصميم المظلة ثلاثية الأبعاد */
+ .store-awning {
+    display: flex;
+    z-index: 10; /* للتأكد من أنه فوق المحتوى */
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 60px;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #f57c00, #f62c8e);
+    position: fixed; /* يجعل العنصر ثابتًا بالكامل */
+    top: 0; /* تثبيت العنصر في أعلى الصفحة */
+    left: 0;
+    transform: none; /* إزالة أي تحويلات قد تؤدي إلى تحرك العنصر */
+}
+ /* Background */
+.hero {
+    background: url('/fruitkha-1.0.0/img/Rustic-Cafe-Counter.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 50vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+ /* Welcome Text */
+.hero-content {
+    z-index: 1;
+    text-align: center; 
+    color: white;
+    margin-top: 0px; 
+}
+        .hero-content h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .hero-content h1 {
+    animation: fadeInOut 3s ease forwards; /* تطبيق التأثير */
+}
+           @keyframes fadeInOut {
+    0% {
+        opacity: 0; /* يبدأ العنوان غير مرئي */
+        transform: translateY(-100px); /* يتحرك للأعلى */
+    }
+    30% {
+        opacity: 1; /* يظهر العنوان */
+    }
+    70% {
+        opacity: 1; /* يبقى مرئي */
+    }
+    100% {
+        opacity: 0; /* يختفي */
+        transform: translateY(70px);
+    }
+           }
+ /* Transparency */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.0); /* يمكنك تعديل الشفافية حسب الحاجة */
+}
+  /* Logo */
+        .logo {
+            position: fixed;
+            top: 15px;
+            left: 13px;
+        }
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+        /* Social Icons and Menu Icon */
+        .top-icons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .top-icons a, .menu-icon {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+   /* Menu test */
+.section {
+    border-top-left-radius: 25px; 
+    border-top-right-radius: 25px; 
+    background-color: #F6F7F9; 
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px; 
+    margin-top: -25px;
+    position: relative;
+}
+.section h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: -10px; 
+}
+ .section h2 span {
+            color: #f57c00;
+        }
+.section .underline {
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    background-color: #f57c00;
+}
+/* تنسيق الحاوية الرئيسية للتبويبات */
+.tabs {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* إخفاء شريط التمرير في المتصفحات المختلفة */
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+.tabs {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* تنسيق كل تبويبة */
+.tab {
+    padding: 8px 10px;
+    color: #555;
+    background-color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    flex: 0 0 auto;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+/* تنسيق الصور داخل التبويبات */
+.tab img {
+    width: 65px; /* عرض الصورة */
+    height: 65px; /* ارتفاع الصورة */
+    border-radius: 15px; /* زوايا دائرية */
+    object-fit: cover; /* لضبط الصورة في الإطار */
+    border: 3px solid gold; /* حواف ذهبية بسماكة 3 بكسل */
+    margin-bottom :7px;
+}
+
+/* تنسيق التبويبة النشطة */
+.tab.active {
+    color: #000;
+    border-bottom: 4px solid #f57c00;
+    position: relative;
+}
+        .container {
+            display: none;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+            margin-top: 5px;
+            padding: 4px;
+        }
+        .container.active {
+            display: flex;
+        }
+        .product-card {
+            width: 49%;
+            height:100:px;
+            border: 1px solid #ddd;
+            background-color:#fff;
+            border-radius: 8px;
+            padding: 0px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .product-card p {
+            color: #888;
+        }
+        .price {
+            font-size: 20px;
+            color: #333;
+            margin: 10px 0;
+        }
+        .add-to-cart {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #f57c00;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom:20px;
+        }
+        .sale-section {
+    background-color: #f2f2f2; /* لون الخلفية */
+    padding: 20px;
+    text-align: left ;
+    font-family: Arial, sans-serif;
+}
+
+.sale-section h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+    margin-top :50px;
+}
+
+.sale-section h1 span {
+    color: #ff7a00; /* لون الكلمة "Discount..." */
+}
+
+.sale-section p {
+    font-size: 1.5em;
+    color: #333;
+    margin: 20px 0;
+}
+
+.sale-section p .discount {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ff7a00; /* لون النسبة */
+}
+
+.shop-now {
+    background-color: #ff7a00; /* لون الزر */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom :40px;
+}
+
+.shop-now:hover {
+    background-color: #e06c00; /* لون عند التحويم */
+}
+.discover-section {
+    background-image: url('/fruitkha-1.0.0/img/IMG20220204201624-1.jpg'); /* ضع مسار الصورة هنا */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay p {
+    font-size: 1.5em;
+    color: #ff0000; /* اللون الأحمر لكلمة "Discover" */
+    margin: 0;
+}
+
+.overlay h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+.card2 {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.card2-image {
+    width: 93%;
+   height:210px;
+    border-radius: 15px;
+    margin-top:20px;
+}
+
+.card2-title {
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 30px;
+   margin-right: 60px;
+    
+}
+
+.card2-description {
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 20px 0;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.card2-link {
+    color: #fff;
+    font-weight: 400;
+    padding: 7px 23px;
+    border-radius :12px;
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    margin-right: 250px;
+    margin-bottom:40px;
+    background-color: #000;
+    background-size: 40px 50px;
+}
+#discover-video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/fruitkha-1.0.0/img/2/23848509741_869081fbca_b.jpg') center/cover no-repeat;
+  background-attachment: fixed; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+#discover-video .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#discover-video .content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+/* نص "Discover" */
+#discover-video .content p {
+  color: red;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* عنوان "OUR VIDEO" */
+#discover-video .content h1 {
+  font-size: 3em;
+  margin: 0.2em 0;
+}
+
+/* زر التشغيل */
+#discover-video .content .play-button {
+  font-size: 1.7em;
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.review-section {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-top:70px;
+  margin-bottom: 100px;
+}
+
+.review-title {
+  color: red;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.review-heading {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0.2em 0;
+  color: #000;
+}
+
+.review-slider {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.review-slide.active {
+  display: block;
+  position: relative;
+}
+
+.review-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid red;
+}
+
+.review-text {
+  font-size: 1.2em;
+  color: #666;
+  margin: 1em 0;
+  padding: 0 1em;
+}
+
+.review-stars {
+  color: red;
+  font-size: 1.5em;
+}
+
+.review-author {
+  font-weight: bold;
+  color: #333;
+  margin-top: 1em;
+}
+
+.review-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.review-pagination .dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.review-pagination .dot.active {
+  background-color: red;
+}
+.footer {
+    background-color: #0d2a33;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+.footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.footer p {
+    font-size: 0.9rem;
+    margin: 15px 0;
+}
+.footer .contact-info {
+    margin: 50px 0;
+}
+.footer .contact-info p {
+    margin: 5px 0;
+}
+.footer .social-icons {
+    margin-top: 20px;
+}
+.footer .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.footer .credits {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+.footer .credits a {
+    color: #f39c12;
+    text-decoration: none;
+   }
