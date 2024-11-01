@@ -1,0 +1,20 @@
+{
+  "name": "TN-WORK",
+  "short_name": "Tnwork",
+  "start_url": "/fruitkha-1.0.0/Restaurant test 2.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/fruitkha-1.0.0/img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/fruitkha-1.0.0/img54120.jpg",
+      "sizes": "512x512",
+      "type": "image/jpg"
+    }
+  ]
+}
