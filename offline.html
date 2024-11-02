@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>غير متصل بالإنترنت</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    .container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 24px;
+      color: #ff5e5e;
+    }
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .icon {
+      font-size: 50px;
+      color: #ff5e5e;
+    }
+    .retry-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .retry-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">⚠️</div>
+    <h1>أنت غير متصل بالإنترنت</h1>
+    <p>عذرًا، لا يمكنك الوصول إلى هذه الصفحة الآن.</p>
+    <p>يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.</p>
+    <a href="index.html" class="retry-button">إعادة المحاولة</a>
+  </div>
+</body>
+</html>
