@@ -2,7 +2,7 @@
   "name": "TN-WORK",
   "short_name": "Tnwork",
   "start_url": "/fruitkha-1.0.0/Restaurant test 2.html",
-  "display": "fullscreen",  // قم بتغيير هذا إلى "fullscreen"
+  "display": "fullscreen", 
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
