@@ -13,7 +13,7 @@
     <!-- CSS File -->
     <link rel="stylesheet" href="Styles/Style.css">
     <!-- Web App Manifest -->
-    <link rel="manifest" href="/fruitkha-1.0.0/manifest.json">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <!-- Hero Section -->
@@ -145,7 +145,7 @@
       // Register service worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/fruitkha-1.0.0/service-worker.js').then(function(registration) {
+          navigator.serviceWorker.register('service-worker.js').then(function(registration) {
             console.log('ServiceWorker registered with scope:', registration.scope);
           }, function(error) {
             console.log('ServiceWorker registration failed:', error);
