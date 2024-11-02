@@ -281,7 +281,7 @@
     background-color: #e06c00; /* لون عند التحويم */
 }
 .discover-section {
-    background-image: url('/fruitkha-1.0.0/img/IMG20220204201624-1.jpg'); /* ضع مسار الصورة هنا */
+    background-image: url('image/IMG20220204201624-1.jpg'); /* ضع مسار الصورة هنا */
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
