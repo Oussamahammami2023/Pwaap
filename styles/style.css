@@ -29,7 +29,7 @@
 }
  /* Background */
 .hero {
-    background: url('/fruitkha-1.0.0/img/Rustic-Cafe-Counter.jpg') no-repeat center center/cover;
+    background: url('image/348s.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     height: 50vh; 
     display: flex;
