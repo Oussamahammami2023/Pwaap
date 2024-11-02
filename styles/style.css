@@ -29,15 +29,39 @@
 }
  /* Background */
 .hero {
-    background: url('image/081524_NuriSteakHouse_KathyTran_IMG_0178.53.jpg') no-repeat center center/cover;
-    background-attachment: fixed;
+    position: relative;
     height: 60vh; 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    position: relative;
+    overflow: hidden; /* تأكد من عدم خروج الصورة عن العنصر */
+}
+
+.hero-image {
+    position: absolute; /* تجعل الصورة في الخلف */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لضبط الصورة بشكل مناسب */
+    z-index: 0; /* لضمان أن تكون في الخلف */
+}
+
+.overlay {
+    position: absolute; /* لتغطي الصورة */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* يمكنك تعديل الشفافية حسب الحاجة */
+    z-index: 1; /* لتكون فوق الصورة */
+}
+
+.hero-content {
+    position: relative; /* ليكون فوق كل العناصر */
+    z-index: 2; /* لتكون فوق الـ overlay */
 }
  /* Welcome Text */
 .hero-content {
