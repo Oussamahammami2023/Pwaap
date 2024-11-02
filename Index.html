@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- CSS File -->
+    <link rel="stylesheet" href="/fruitkha-1.0.0/style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/fruitkha-1.0.0/manifest.json">
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="overlay"></div>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="/fruitkha-1.0.0/img/logo.png" alt="Pato Restaurant Logo">
+        </div>
+        <!-- Social Icons and Menu Icon -->
+        <div class="top-icons">
+            <a href="#"><i class="fab fa-tripadvisor"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-apps"></i></a>
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <!-- Title -->
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Bienvenue</h1>
+        </div>
+    </div>
+    <!-- Section for Menu -->
+    <div class="section">
+        <h2><span>M</span>enu</h2>
+        <div class="underline"></div>
+    </div>
+    
+    <!-- Tabs -->
+    <div class="tabs">
+        <div class="tab active" onclick="showGroup('all', this)">
+            <img src="/fruitkha-1.0.0/img/menu img/pizza.jpg" alt="Pizza">
+            Pizza
+        </div>
+        <div class="tab" onclick="showGroup('music', this)">
+            <img src="/fruitkha-1.0.0/img/menu img/burger.jpg" alt="Burger">
+            Burger
+        </div>
+        <div class="tab" onclick="showGroup('list', this)">
+            <img src="/fruitkha-1.0.0/img/menu img/9880a0e565370b0b130cfb9218826fa1.jpg" alt="Sandwiches">
+            Sandwiches
+        </div>
+        <div class="tab" onclick="showGroup('apps', this)">
+            <img src="/fruitkha-1.0.0/img/3/6978155.png" alt="Shawarma">
+            Shawarma
+        </div>
+    </div>
+    
+    <!-- Product Cards Sections (example for one category) -->
+    <div id="all" class="container active">
+        <div class="product-card">
+            <img src="/fruitkha-1.0.0/img/pizza-with-slice-pizza-it_1102161-15362.avif" alt="Banana">
+            <h3>Banana</h3>
+            <p>Petite pizza</p>
+            <div class="price">10DT</div>
+            <a href="#" class="add-to-cart">🛒Acheter</a>
+        </div>
+        <!-- Additional product cards here... -->
+    </div>
 
+    <!-- Sale Section -->
+    <div class="sale-section">
+        <h1>Les soldes de décembre sont en cours !<br>avec grand <span>Rabais...</span></h1>
+        <p>Vente! Jusqu'à <span class="discount">50%</span> off</p>
+        <button class="shop-now">Bienvenue</button>
+    </div>
+
+    <!-- Discover Section -->
+    <div class="discover-section">
+        <div class="overlay">
+            <p>Découvrir</p>
+            <h1>PATO<br>PLACE</h1>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="review-section">
+        <p class="review-title">Customers Say</p>
+        <h1 class="review-heading">REVIEW</h1>
+        <div class="review-slider">
+            <div class="review-slide active">
+                <div class="review-content">
+                    <div class="review-image">
+                        <img src="/fruitkha-1.0.0/img/1/IMG_20240819_210356.jpg" alt="Customer 1">
+                    </div>
+                    <p class="review-text">
+                        “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem, mattis in pretium nec, fermentum viverra dui ”
+                    </p>
+                    <div class="review-stars">
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                    </div>
+                    <p class="review-author">MARIE SIMMONS - NEW YORK</p>
+                </div>
+            </div>
+            <!-- Additional reviews... -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h2>About us</h2>
+        <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+        <div class="contact-info">
+            <h2>Contact</h2>
+            <p>34/8, East Hukupara, Gifirtok, Sadan.</p>
+            <p>Phone: +00 111 222 3333</p>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f">F</i></a>
+            <a href="#"><i class="fab fa-twitter">t</i></a>
+            <a href="#"><i class="fab fa-instagram">I</i></a>
+            <a href="#"><i class="fab fa-linkedin-in">L</i></a>
+            <a href="#"><i class="fab fa-dribbble">D</i></a>
+        </div>
+        <div class="credits">
+            <p>Copyrights © 2025 - <a href="#">TN-WORK</a>, Tous droits réservés.</p>
+            <p>Powered By - <a href="#">TN-WORK</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="/fruitkha-1.0.0/js/main.js"></script>
+    <script>
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/fruitkha-1.0.0/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registered with scope:', registration.scope);
+          }, function(error) {
+            console.log('ServiceWorker registration failed:', error);
+          });
+        });
+      }
+    </script>
+</body>
+</html>
