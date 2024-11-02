@@ -2,7 +2,7 @@
   "name": "TN-WORK",
   "short_name": "Tnwork",
   "start_url": "/fruitkha-1.0.0/Restaurant test 2.html",
-  "display": "standalone",
+  "display": "fullscreen",  // قم بتغيير هذا إلى "fullscreen"
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
@@ -17,12 +17,12 @@
       "type": "image/png"
     }
   ],
-  "id": "Tnworkh1dm ",
-  "iarc_rating_id": "Tnworkh1dm ",
+  "id": "Tnworkh1dm",
+  "iarc_rating_id": "Tnworkh1dm",
   "prefer_related_applications": true,
   "shortcuts": [
     {
-      "name": "Oussama ",
+      "name": "Oussama",
       "url": "",
       "description": ""
     }
