@@ -31,16 +31,11 @@
 .hero {
     position: relative;
     height: 60vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
     overflow: hidden; /* تأكد من عدم خروج الصورة عن العنصر */
 }
 
 .hero-image {
-    position: absolute; /* تجعل الصورة في الخلف */
+    position: fixed; /* تجعل الصورة ثابتة */
     top: 0;
     left: 0;
     width: 100%;
