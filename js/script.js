@@ -35,3 +35,36 @@ function nextSlide() {
 }
 
 setInterval(nextSlide, 3000); // التمرير كل 3 ثواني
+    <script>
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registered with scope:', registration.scope);
+          }, function(error) {
+            console.log('ServiceWorker registration failed:', error);
+          });
+        });
+      }
+    </script>
+        
+
+    <script>
+        // دالة لتحويل الصفحة إلى وضع ملء الشاشة
+        function openFullscreen() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                document.documentElement.msRequestFullscreen();
+            }
+        }
+
+        // استدعاء الدالة بعد تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', (event) => {
+            openFullscreen();
+        });
+    </script>
