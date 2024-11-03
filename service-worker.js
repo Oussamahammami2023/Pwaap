@@ -1,13 +1,15 @@
+const CACHE_NAME = 'offline-cache-v2'; // قم بتغيير هذا الرقم في كل تحديث
+
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('offline-cache').then(function(cache) {
+    caches.open(CACHE_NAME).then(function(cache) {
       return cache.addAll([
         'offline.html',
-        // أضف باقي الملفات التي تريد تخزينها في الذاكرة المؤقتة هنا
+        // أضف باقي الملفات التي تريد تخزينها في الكاش
       ]);
     })
   );
-  self.skipWaiting(); // تفعيل Service Worker مباشرةً دون انتظار إغلاق النسخة القديمة
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', function(event) {
@@ -15,23 +17,12 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.map(function(cacheName) {
-          if (cacheName !== 'offline-cache') {
-            // حذف الكاش القديم
-            return caches.delete(cacheName);
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName); // حذف الكاش القديم
           }
         })
       );
     })
   );
-  self.clients.claim(); // تفعيل Service Worker على جميع التبويبات المفتوحة
-});
-
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request).catch(function() {
-        return caches.match('offline.html');
-      });
-    })
-  );
+  self.clients.claim();
 });
