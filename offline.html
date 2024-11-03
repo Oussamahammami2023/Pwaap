@@ -13,27 +13,23 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #f8f8f8;
-      color: #333;
+      background-color: #1a1a1a;
+      color: #ffffff;
     }
     .container {
       max-width: 400px;
       padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     h1 {
       font-size: 24px;
-      color: #ff5e5e;
+      font-weight: bold;
+      color: #ffffff;
+      margin: 0;
     }
     p {
-      font-size: 18px;
+      font-size: 16px;
       margin: 10px 0;
-    }
-    .icon {
-      font-size: 50px;
-      color: #ff5e5e;
+      color: #d3d3d3;
     }
     .retry-button {
       display: inline-block;
@@ -41,23 +37,22 @@
       padding: 10px 20px;
       font-size: 16px;
       color: #ffffff;
-      background-color: #4CAF50;
+      background-color: #a349a4;
       border: none;
-      border-radius: 5px;
+      border-radius: 25px;
       cursor: pointer;
       text-decoration: none;
+      font-weight: bold;
     }
     .retry-button:hover {
-      background-color: #45a049;
+      background-color: #8e3b8e;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="icon">⚠️</div>
-    <h1>أنت غير متصل بالإنترنت</h1>
-    <p>عذرًا، لا يمكنك الوصول إلى هذه الصفحة الآن.</p>
-    <p>يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.</p>
+    <h1>عذرًا!</h1>
+    <p>حدث خطأ ما. يرجى إعادة المحاولة.</p>
     <a href="index.html" class="retry-button">إعادة المحاولة</a>
   </div>
 </body>
