@@ -12,7 +12,7 @@
 }
  /* Background */
 .hero {
-    background: url('image/Background.jpg') no-repeat center center/cover;
+    background: url('https://github.com/Oussamahammami2023/Pwaap/blob/15a7406c0f828e4d876a01013bc4d6d7ae66a490/image/Background.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     height: 55vh; 
     display: flex;
