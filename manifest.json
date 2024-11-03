@@ -19,7 +19,7 @@
   ],
   "id": "Tnworkh1dm",
   "iarc_rating_id": "Tnworkh1dm",
-"prefer_related_applications": false
+  "prefer_related_applications": false,
   "shortcuts": [
     {
       "name": "Oussama",
@@ -31,4 +31,3 @@
     "business"
   ]
 }
-
