@@ -35,7 +35,6 @@ function nextSlide() {
 }
 
 setInterval(nextSlide, 3000); // التمرير كل 3 ثواني
-    <script>
       // Register service worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
@@ -46,10 +45,7 @@ setInterval(nextSlide, 3000); // التمرير كل 3 ثواني
           });
         });
       }
-    </script>
         
-
-    <script>
         // دالة لتحويل الصفحة إلى وضع ملء الشاشة
         function openFullscreen() {
             if (document.documentElement.requestFullscreen) {
@@ -67,4 +63,3 @@ setInterval(nextSlide, 3000); // التمرير كل 3 ثواني
         document.addEventListener('DOMContentLoaded', (event) => {
             openFullscreen();
         });
-    </script>
