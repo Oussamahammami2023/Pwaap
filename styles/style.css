@@ -21,7 +21,6 @@
     text-align: center;
     color: white;
     position: relative;
-     z-index: 0;
 }
  /* Welcome Text */
 .hero-content {
@@ -68,7 +67,7 @@
             position: fixed;
             top: 15px;
             left: 13px;
-             z-index: 1;
+             z-index: 0;
         }
         .logo img {
             width: 100px;
@@ -82,20 +81,13 @@
             display: flex;
             align-items: center;
             gap: 15px;
-             z-index: 1;
+             z-index: 0;
         }
         .top-icons a, .menu-icon {
             color: white;
             font-size: 24px;
             text-decoration: none;
         }
-.section,
-.sale-section,
-.discover-section,
-.review-section,
-.footer {
-    position: relative;
-    z-index: 2; 
    /* Menu test */
 .section {
     border-top-left-radius: 25px; 
@@ -529,4 +521,4 @@
 .footer .credits a {
     color: #f39c12;
     text-decoration: none;
-}
+     }
