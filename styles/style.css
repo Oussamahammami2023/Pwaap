@@ -348,7 +348,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url('/fruitkha-1.0.0/img/2/23848509741_869081fbca_b.jpg') center/cover no-repeat;
+  background: url('../image/23848509741_869081fbca_b.jpg') center/cover no-repeat;
   background-attachment: fixed; 
   display: flex;
   align-items: center;
