@@ -2,13 +2,13 @@ backend:
   name: git-gateway
   branch: main  # أو الفرع الذي تستخدمه، مثل master
 
-media_folder: "static/images"  # مجلد الصور
+media_folder: "../static/images"  # مجلد الصور
 public_folder: "/images"       # المسار العام للصور في الموقع
 
 collections:
   - name: "products"
     label: "Products"
-    folder: "content/products"  # المجلد الذي سيحتوي على ملفات المنتجات
+    folder: "../content/products"  # المجلد الذي سيحتوي على ملفات المنتجات
     create: true
     fields:
       - { name: "title", label: "Title", widget: "string" }
