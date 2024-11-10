@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج طلب الطعام</title>
+</head>
+<body>
+    <h2>نموذج طلب الطعام</h2>
+    <form action="https://formsubmit.co/oussemahammemi@gmail.com" method="POST">
+        <label for="name">الاسم:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">البريد الإلكتروني:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">رقم الهاتف:</label><br>
+        <input type="text" id="phone" name="phone" required><br><br>
+
+        <label for="address">عنوان التوصيل:</label><br>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <label for="order">طلبك:</label><br>
+        <textarea id="order" name="order" rows="4" required></textarea><br><br>
+
+        <input type="hidden" name="_subject" value="طلب طعام جديد">
+        <input type="hidden" name="_next" value="https://your-website.com/thank-you.html">
+
+        <button type="submit">إرسال الطلب</button>
+    </form>
+</body>
+</html>
