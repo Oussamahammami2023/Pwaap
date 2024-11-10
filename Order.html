@@ -75,6 +75,15 @@
     <form action="https://formsubmit.co/el/tugixu" method="POST">
         <h2>Send Message</h2>
         
+        <!-- حماية من الرسائل العشوائية -->
+        <input type="text" name="_honey" style="display:none">
+        
+        <!-- إعادة توجيه بعد الإرسال -->
+        <input type="hidden" name="_next" value="https://yoursite.com/thank-you.html">
+        
+        <!-- رد تلقائي -->
+        <input type="hidden" name="_autoresponse" value="Thank you for your message! We will get back to you soon.">
+        
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required>
         
