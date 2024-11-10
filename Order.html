@@ -4,29 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نموذج طلب الطعام</title>
+    <style>
+        /* إعدادات الجسم */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* تنسيق النموذج */
+        .order-form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        /* عنوان النموذج */
+        .order-form h2 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        /* تنسيق العلامات */
+        .order-form label {
+            color: #666666;
+            font-size: 1em;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* تنسيق الحقول */
+        .order-form input[type="text"],
+        .order-form input[type="email"],
+        .order-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* تنسيق زر الإرسال */
+        .order-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* تأثير التحويم على الزر */
+        .order-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h2>نموذج طلب الطعام</h2>
-    <form action="https://formsubmit.co/el/tugixu" method="POST">
-        <label for="name">الاسم:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+    <div class="order-form">
+        <h2>نموذج طلب الطعام</h2>
+        <form action="https://formsubmit.co/el/tugixu" method="POST">
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="email">البريد الإلكتروني:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="phone">رقم الهاتف:</label><br>
-        <input type="text" id="phone" name="phone" required><br><br>
+            <label for="phone">رقم الهاتف:</label>
+            <input type="text" id="phone" name="phone" required>
 
-        <label for="address">عنوان التوصيل:</label><br>
-        <input type="text" id="address" name="address" required><br><br>
+            <label for="address">عنوان التوصيل:</label>
+            <input type="text" id="address" name="address" required>
 
-        <label for="order">طلبك:</label><br>
-        <textarea id="order" name="order" rows="4" required></textarea><br><br>
+            <label for="order">طلبك:</label>
+            <textarea id="order" name="order" rows="4" required></textarea>
 
-        <input type="hidden" name="_subject" value="طلب طعام جديد">
-        <input type="hidden" name="_next" value="Thanks .html">
+            <input type="hidden" name="_subject" value="طلب طعام جديد">
+            <input type="hidden" name="_next" value="Thanks.html">
 
-        <button type="submit">إرسال الطلب</button>
-    </form>
+            <button type="submit">إرسال الطلب</button>
+        </form>
+    </div>
 </body>
 </html>
