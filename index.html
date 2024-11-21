@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TN-WORK</title>
+  <link rel="stylesheet" href="./styles/style.css"> <!-- رابط لملف CSS -->
+</head>
+<body>
+  <!-- قسم الخلفية الزرقاء -->
+  <div class="blue-background-container">
+    <!-- صورة الأيقونة مع رابط -->
+    <a href="/pages/Education">
+      <img src="https://cdn.shopify.com/s/files/1/0895/5831/9385/files/add-friend.png?v=1723307718" alt="Icon" class="icon">
+    </a>
+    
+    <!-- عنوان فوق خانة البحث -->
+    <div class="search-title">TN-WORK</div>
+    
+    <!-- قسم خانة البحث -->
+    <div class="unique-search-bar">
+      <form action="/search" method="get" role="search">
+        <div class="unique-search-input-container">
+          <input type="search" name="q" class="unique-search-input" placeholder="Recherche de prestataires de services en Tunisie" aria-label="Recherche">
+          <button type="submit" class="unique-search-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M9 17a7 7 0 1 1 4.95-2.05L22 21.91l-1.41 1.41L12.45 16.4A7 7 0 0 1 9 17zm-4-7a5 5 0 1 0 10 0A5 5 0 0 0 5 10z"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
 
+    <!-- قسم قائمة المجموعات -->
+    <div class="unique-c-1-list">
+       <a href="/pages/Marketing" class="unique-c-1-item" data-group="E-commerce" onclick="setActive(this)">E-commerce</a>
+      <a href="/" class="unique-c-1-item" data-group="Design" onclick="setActive(this)">Design</a>
+      <a href="/pages/Development" class="unique-c-1-item" data-group="Develop" onclick="setActive(this)">Develop..</a>
+      <a href="/pages/Education" class="unique-c-1-item" data-group="Education" onclick="setActive(this)">Education</a>
+      <a href="/pages/Traduction" class="unique-c-1-item" data-group="Rédaction & Traduction" onclick="setActive(this)">Reservation</a>
+      <a href="/pages/IA" class="unique-c-1-item" data-group="Services d'IA" onclick="setActive(this)">Maintenance services</a>
+      <a href="/pages/Consultation" class="unique-c-1-item" data-group="Consultation" onclick="setActive(this)">Consultation</a>
+    </div>
+  </div>
+  
+  <div class="group-container-1-2" id="groupContainer">
+    <div class="group-1-2" style="background-image: url('https://cdn.shopify.com/s/files/1/0653/2490/8694/files/TN_Gen_mSliderT1.gif?v=1723814324');"></div>
+    <div class="group-1-2" style="background-image: url('https://cdn.shopify.com/s/files/1/0653/2490/8694/files/TN_Gen_mSlider.png?v=1723813963');"></div>
+    <div class="group-1-2" style="background-image: url('https://cdn.shopify.com/s/files/1/0653/2490/8694/files/TN_Gen_mSlider.gif?v=1723813961');"></div>
+    <div class="group-1-2" style="background-image: url('https://cdn.shopify.com/s/files/1/0653/2490/8694/files/Slidermobile-CPR.jpg?v=1723919697');"></div>
+    <div class="group-1-2" style="background-image: url('https://cdn.shopify.com/s/files/1/0653/2490/8694/files/660x330.jpg?v=1723919698');"></div>
+  </div>
+  </div>
+<section class="group-list-1-3">
+  <a href="#" class="group-item-1-3" onclick="openModal1_3('0'); return false;">
+    <div class="group-title-1-3">
+      <div class="group-title-1-3-text">
+        Boutiques 
+        <div class="group-subtitle-1-3">
+          + 0
+        </div>
+      </div>
+    </div> <!-- تم إغلاق div هنا بشكل صحيح -->
+  </a>
+</section>
+
+<!-- Modal (popup window) -->
+<div id="modal1_3" class="modal-1-3" style="display:none;">
+  <div class="modal-header-1-3">
+    <span class="close-btn-1-3" onclick="closeModal1_3()">&times;</span>
+    <h2 id="modalTitle1_3">Popup Title</h2>
+  </div>
+  <div class="modal-content-1-3" id="modalContent1_3">
+    <!-- Content will be loaded dynamically -->
+  </div>
+</div>
+    <div id="1-4" class="product-header">
+        <h1 class="product-title">Produits</h1>
+        <h1 class="show-all">
+            <a href="your-page-url">Afficher tout</a>
+        </h1>
+    </div>
+  <div class="a-4-container">
+    <div class="a-4-group-section">
+      <!-- Group Row 1 -->
+      <div class="a-4-group-row">
+        <a href="/pages/Logo" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0653/2490/8694/files/IMG_20240816_160759.jpg?v=1723820892" alt="Logo Icon">
+          </div>
+          <div>
+            <div class="a-4-group-title">Mode & Vêtements</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+        <a href="https://example.com/sports" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0653/2490/8694/files/istockphoto-832109374-612x612.jpg?v=1723821702" alt="Digital Ads Icon">
+          </div>
+          <div>
+            <div class="a-4-group-title">Cuisine & Électro</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+        <a href="https://example.com/cafe" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0664/2591/3507/files/14875869.png?v=1723198831" alt="Packaging Design Icon">
+          </div>
+          <div>
+            <div class="a-4-group-title">Event & Promotion</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+      </div>
+      <!-- Group Row 2 -->
+      <div class="a-4-group-row">
+        <a href="https://example.com/travel" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0653/2490/8694/files/OIP_13.jpg?v=1723982901" alt="JavaScript Icon">
+          </div>
+          <div>
+            <div class="a-4-group-title">Smartphones & Acc</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+        <a href="https://example.com/music" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0717/7293/0298/files/3d-illustration-young-businessman-with-big-smile-his-face_1142-51482.jpg?v=1724449829" alt="UI Design Icon">
+          </div>
+          <div>
+            <div class="a-4-group-title">3D design</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+        <a href="https://example.com/education" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0664/2591/3507/files/iOS_Developers_2x_524c3a4b-5d2a-43af-9eb5-4497b24cfe94.png?v=1723195385" alt="Presentation Design Icon">
+          </div>
+          <div>
+            <div class="a-4-group-title">Presentation Design</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+      </div>
+      <!-- Group Row 3 -->
+      <div class="a-4-group-row">
+        <a href="https://example.com/art" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0653/2490/8694/files/business-flyer-template-design-minimalist-style-abstract-background-annual-report-brochure-cover_57082-3073.jpg?v=1723997010" alt="Brochure and Flyer Icon">
+          </div>
+          <div>
+            <div class="a-4-group-title">Produits de Beauté</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+        <a href="https://example.com/technology" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0717/7293/0298/files/contact-us-icon-set-collection-vector-illustration-websites-mobile-applications_1253202-62689.jpg?v=1724451939" alt="Illustration Icon">
+          </div>
+          <div>
+            <div class="a-4-group-title">Custom icons</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+        <a href="https://example.com/health" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0664/2591/3507/files/Unity_Developers_2x_14db3074-2de7-4104-98b9-9bb2adc4166d.png?v=1723195386386" alt="Infographic Design Icon">
+          </div>
+          <div>
+            <div class="a-4-group-title">Infographic Design</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+      </div>
+      <!-- Group Row 4 -->
+      <div class="a-4-group-row">
+        <a href="https://example.com/new1" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0653/2490/8694/files/IMG_20240818_164620.jpg?v=1723996021" alt="New Service 1">
+          </div>
+          <div>
+            <div class="a-4-group-title">Produits pour Bébé</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+        <a href="https://example.com/new2" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://via.placeholder.com/75x70" alt="New Service 2">
+          </div>
+          <div>
+            <div class="a-4-group-title">Motion Graphics & Anim..</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+        <a href="https://example.com/new3" class="a-4-group-item">
+          <div class="a-4-group-icon">
+            <img src="https://via.placeholder.com/75x70" alt="New Service 3">
+          </div>
+          <div>
+            <div class="a-4-group-title">New Service 3</div>
+            <div class="a-4-group-subtitle">0 products</div>
+          </div>
+        </a>
+      </div>
+     </div>
+   </div>
+<div class="group-5">
+  <h2 class="group-title">Espace de travail</h2>
+
+  <a href="link1.html" class="group-5-item">
+    <div class="group-image-container">
+      <img src="https://cdn.shopify.com/s/files/1/0713/8538/3128/files/IMG_20240918_125435.jpg?v=1726660519" alt="مجموعة 1" class="group-image">
+    </div>
+    <h3 class="item-title">Créer une boutique</h3>
+  </a>
+
+  <a href="link2.html" class="group-5-item">
+    <div class="group-image-container">
+      <img src="https://cdn.shopify.com/s/files/1/0713/8538/3128/files/IMG_20240918_124841.jpg?v=1726660189" alt="مجموعة 2" class="group-image">
+    </div>
+    <h3 class="item-title">مجموعة 2</h3>
+  </a>
+
+  <a href="link3.html" class="group-5-item">
+    <div class="group-image-container">
+      <img src="https://cdn.shopify.com/s/files/1/0713/8538/3128/files/IMG_20240918_124841.jpg?v=1726660189" alt="مجموعة 3" class="group-image">
+    </div>
+    <h3 class="item-title">groupe 3</h3>
+  </a>
+</div>
+  <script src="./js/script.js"></script> <!-- رابط لملف JavaScript -->
+  </script>
+</body>
+</html> 
