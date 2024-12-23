@@ -1,24 +1,25 @@
 {
-  "name": "TN-WORK",
+  "name": "Bons plans entre mjeziya ",
   "short_name": "Tnwork",
-  "start_url": "index.html",
-  "display": "fullscreen", 
+  "start_url": "index2.html",
+   "scope": "/",
+  "display": "standalone", 
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "image/IMG_20241105_005321.jpg",
+      "src": "image/1.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "image/IMG_20241105_005321.jpg",
+      "src": "image/1.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "id": "Tnworkh1dm",
-  "iarc_rating_id": "Tnworkh1dm",
+  "id": "Tnworkh1m",
+  "iarc_rating_id": "Tnworkh1m",
   "prefer_related_applications": true,
   "shortcuts": [
     {
